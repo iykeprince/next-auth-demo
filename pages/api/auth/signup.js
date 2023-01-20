@@ -16,7 +16,7 @@ const client = new GraphQLClient(GRAPHCMS_URL, {
 })
 
 const CreateNextUserMutation = gql`
-  mutation createNextUser($userData: NextUserCreateInput) {
+  mutation createNextUser($userData: NextUserCreateInput!) {
     createNextUser(data: $userData) {
       id
       email
@@ -36,7 +36,7 @@ export default async function handler(req, res) {
     const hashedPassword = await bcrypt.hash(password, 8)
     const userData = {
         email,
-        passowrd: hashedPassword,
+        password: hashedPassword,
         firstname,
         lastname,
         token

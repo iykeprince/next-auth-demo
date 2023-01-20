@@ -86,7 +86,7 @@ export default function SignIn() {
         </div>
         <div className="text-center text-sm">
           Not a User?
-          <Link href="/signup">
+          <Link href="/signup" legacyBehavior>
             <a className="font-medium text-blue-900 ml-1">
               Sign Up
             </a>

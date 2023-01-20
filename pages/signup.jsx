@@ -103,7 +103,7 @@ export default function SignUp() {
         </div>
         <div className="text-center text-sm">
           Already a User?
-          <Link href="/signin">
+          <Link href="/signin" legacyBehavior>
             <a className="font-medium text-blue-900 ml-1">
               Sign In
             </a>

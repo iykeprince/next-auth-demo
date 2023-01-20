@@ -1,6 +1,7 @@
+import Layout from '@/components/Layout';
 import { API_ROUTES, APP_ROUTES } from '@/utils/constants';
 import axios from 'axios';
-import { withIronSessionSsr } from 'iron-session/next/dist';
+import { withIronSessionSsr } from 'iron-session/next';
 import React from 'react'
 
 const cookie = {
@@ -9,7 +10,7 @@ const cookie = {
     cookieOptions: { secure: process.env.NODE_ENV === 'production' },
   };
 
-export const getServerSideProps = withIronSessionSsr(async function getServerSideProps({req}){
+export const getServerSideProps = withIronSessionSsr(async ({req}) => {
     const API_SERVER_URL = process.env.API_SERVER_URL;
     const defaultReturnObject = {
         redirect: {
@@ -19,6 +20,7 @@ export const getServerSideProps = withIronSessionSsr(async function getServerSid
     }
     try {
         let userSession = req.session.user;
+
         if(!userSession?.token){
             return defaultReturnObject;
         }

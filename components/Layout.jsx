@@ -16,10 +16,10 @@ export default function Layout({ children }) {
     <>
       <div className="h-screen">
         <header className="flex shadow-lg p-4 bg-blue-900 text-white">
-          <Link href={APP_ROUTES.HOME}>
+          <Link href={APP_ROUTES.HOME} legacyBehavior>
             <a className="mr-5" > Home </a>
           </Link>
-          <Link href={APP_ROUTES.PROFILE}>
+          <Link href={APP_ROUTES.PROFILE} legacyBehavior>
             <a className="mr-5"> Profile </a>
           </Link>
           <button className="ml-auto" onClick={logOut}> Logout </button>

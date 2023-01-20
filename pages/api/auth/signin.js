@@ -16,6 +16,7 @@ const {
     GRAPHCMS_PERMANENTAUTH_TOKEN,
     JWT_SECRET,
   } = process.env
+  
 
 const client = new GraphQLClient(GRAPHCMS_URL, {
     headers: {
